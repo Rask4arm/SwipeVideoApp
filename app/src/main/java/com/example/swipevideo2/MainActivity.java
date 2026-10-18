@@ -28,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
         final ViewPager2 videoViewPager = findViewById(R.id.videosViewPager);
 
         List<VideoItem> videoItemsList = new ArrayList<>();
+
         VideoItem videoCelebration = new VideoItem();
-        videoCelebration.videoURL = "x";
-        videoCelebration.videoTitle = "Celebration";
-        videoCelebration.videoDescription = "Celebrating something IDK";
+        videoCelebration.videoURL = "https://github.com/Rask4arm/VideoDemo/raw/refs/heads/main/IMG_5802.MOV";
+        videoCelebration.videoTitle = "Dolphins";
+        videoCelebration.videoDescription = "Dolphins in galapagos";
         videoItemsList.add(videoCelebration);
+
+        VideoItem videoItemParty = new VideoItem();
+        videoItemParty.videoURL = "https://github.com/Rask4arm/VideoDemo/raw/refs/heads/main/IMG_6111.MOV";
+        videoItemParty.videoTitle = "Badger";
+        videoItemParty.videoDescription = "Badger in my back yard";
+        videoItemsList.add(videoItemParty);
 
 
         videoViewPager.setAdapter(new VideoAdapter(videoItemsList));
