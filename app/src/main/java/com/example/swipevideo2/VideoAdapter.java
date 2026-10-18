@@ -13,14 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**
+ * All video backend logic
+ */
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder>{
 
     private List<VideoItem> videoItems;
 
+
+    /**
+     *  Constructor
+     *
+     * @param videoItems List of videos
+     */
     public VideoAdapter(List<VideoItem> videoItems) {
         this.videoItems = videoItems;
     }
 
+    /**
+     * Run on create view holder
+     *
+     * @param parent parent
+     * @param viewType the type of view
+     */
     @NonNull
     @Override
     public VideoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -29,11 +44,20 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         );
     }
 
+    /**
+     * Binds view holder to position
+     *
+     * @param holder the view holder
+     * @param position position put view holder
+     */
     @Override
     public void onBindViewHolder(@NonNull VideoViewHolder holder, int position) {
         holder.setVideoData(videoItems.get(position));
     }
 
+    /**
+     * Returns how many videos there are
+     */
     @Override
     public int getItemCount() {
         return videoItems.size();
@@ -49,7 +73,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         ProgressBar progressBar;
 
         /**
-         * param itemView
+         * Holds video
+         *
+         * @param itemView
          */
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,8 +86,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         }
 
         /**
+         * Sets the data for the video
          *
-         * param videoView
+         * @param videoItem Video information class in project
          */
         void setVideoData(VideoItem videoItem){
             textVideoTitle1.setText(videoItem.videoTitle);
